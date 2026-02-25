@@ -1,5 +1,5 @@
 # CANStrike v4.0 — CAN Bus Attack & Analysis Utility
-### CANPico + vcan0 | Kali Linux | Think 4 Yourself AI Analyst
+### CANPico + vcan0 | Kali Linux | AI Analyst
 
 > ⚠️ **For authorized security research & penetration testing only.**
 
@@ -64,7 +64,7 @@ python3 canstrike.py --playbook example_playbook.json
 ### AI ANALYSIS
 | # | Feature |
 |---|---------|
-| 6 | AI Analysis — Think 4 Yourself (scores all attack vectors) |
+| 6 | AI Analysis — (scores all attack vectors) |
 
 ### ATTACKS
 | # | Feature |
