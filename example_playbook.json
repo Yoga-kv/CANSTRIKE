@@ -1,0 +1,36 @@
+{
+  "name": "Full Auto Scan — vcan0 Demo",
+  "description": "Capture → Analyse → UDS probe → DoS → Fuzz → Report",
+  "steps": [
+    { "cmd": "sleep",        "seconds": 1 },
+
+    { "cmd": "capture",      "duration": 5 },
+    { "cmd": "analyse" },
+
+    { "cmd": "uds_session",  "mode": 3 },
+    { "cmd": "uds_read_did", "did": "0xF190" },
+    { "cmd": "uds_read_did", "did": "0xF18C" },
+    { "cmd": "uds_dtcs" },
+
+    { "cmd": "dos",          "fps": 500, "duration": 3 },
+
+    { "cmd": "fuzz",
+      "id_min": "0x000", "id_max": "0x7FF",
+      "duration": 5,
+      "strategy": "random" },
+
+    { "cmd": "spoof",
+      "id": "0x7E0",
+      "data": "0201030000000000",
+      "count": 10 },
+
+    { "cmd": "capture",      "duration": 3 },
+
+    { "cmd": "export_html",
+      "filename": "canstrike_auto_report.html",
+      "title":    "vcan0 Auto Scan",
+      "tester":   "CANStrike v4.0",
+      "target":   "vcan0 Simulator",
+      "notes":    "Automated playbook run.\nReview analyst results and UDS findings above." }
+  ]
+}

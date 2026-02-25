@@ -1,0 +1,6 @@
+# CANStrike v4.0 — Python dependencies
+# Install all:  pip3 install -r requirements.txt
+
+pyserial>=3.5         # CANPico (USB/SLCAN) backend
+python-can>=4.0.0     # vcan0 / SocketCAN backend
+rich>=13.0.0          # Enhanced terminal UI (tables, live monitor)
